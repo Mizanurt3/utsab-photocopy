@@ -12,11 +12,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        // নিচে স্ক্রল করলে navbar লুকাবে
-        setShowNavbar(false);
+        setShowNavbar(false); // নিচে স্ক্রল করলে navbar লুকাবে
       } else {
-        // উপরে স্ক্রল করলে navbar আবার ভেসে উঠবে
-        setShowNavbar(true);
+        setShowNavbar(true); // উপরে স্ক্রল করলে navbar আবার ভেসে উঠবে
       }
       setLastScrollY(window.scrollY);
     };
@@ -29,6 +27,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleMenuClick = () => {
+    setIsMobileMenuOpen(false); // ✅ ক্লিক করলে মেনু ক্লোজ হবে
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full bg-white shadow-md z-50 transform transition-transform duration-300 ${
@@ -37,9 +39,9 @@ const Navbar = () => {
     >
       <div className="max-w-4xl container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" onClick={handleMenuClick}>
           <Image
-            src="/icons8-photocopy-64.png" // লোগো পাথ
+            src="/icons8-photocopy-64.png"
             alt="Logo"
             width={40}
             height={40}
@@ -59,7 +61,6 @@ const Navbar = () => {
           <Link href="/about-us" className="hover:text-blue-500">
             About Us
           </Link>
-          
         </div>
 
         {/* Mobile Toggle Button */}
@@ -80,8 +81,8 @@ const Navbar = () => {
               strokeWidth="2"
               d={
                 isMobileMenuOpen
-                  ? "M6 18L18 6M6 6l12 12"
-                  : "M4 6h16M4 12h16M4 18h16"
+                  ? "M6 18L18 6M6 6l12 12" // X আইকন
+                  : "M4 6h16M4 12h16M4 18h16" // ☰ আইকন
               }
             ></path>
           </svg>
@@ -91,16 +92,15 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="z-50 md:hidden bg-gray-100 p-4 space-y-2 w-[300px] absolute right-0 top-full shadow-lg">
-          <Link href="/" className="block hover:text-blue-500">
+          <Link href="/" className="block hover:text-blue-500" onClick={handleMenuClick}>
             Home
           </Link>
-          <Link href="/pricing" className="block hover:text-blue-500">
+          <Link href="/pricing" className="block hover:text-blue-500" onClick={handleMenuClick}>
             Pricing
           </Link>
-          <Link href="/about-us" className="block hover:text-blue-500">
+          <Link href="/about-us" className="block hover:text-blue-500" onClick={handleMenuClick}>
             About Us
           </Link>
-          
         </div>
       )}
     </nav>

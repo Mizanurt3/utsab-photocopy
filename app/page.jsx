@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaPhone } from "react-icons/fa";
+import Contacts from "./Contacts/page";
 
 export default function Home() {
   return (
@@ -20,77 +21,54 @@ export default function Home() {
           priority
         />
       </div>
-      {/* Heading */}
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center uppercase underline">
-        দ্রুত যোগাযোগ করার জন্য-
-      </h1>
+     
+     
+  <h1 className="text-2xl font-bold text-gray-800  text-center uppercase underline mb-2">
+  দ্রুত যোগাযোগ করার জন্য-</h1>
+
+     {/* Wrapper */}
+<div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-4xl mb-6 flex flex-col md:flex-row gap-6 justify-center items-center">
+
+
+  {/* WhatsApp Card */}
+  <a 
+    href="https://wa.me/+8801791663651" 
+    target="_blank"
+    className="w-72 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer flex items-center space-x-4 bg-gradient-to-r from-green-400 to-green-600 text-white"
+  >
+    <FaWhatsapp className="text-white text-4xl" />
+    <div>
+      <h2 className="text-lg font-bold">WhatsApp</h2>
+      <p className="font-medium">01791-663651</p>
+    </div>
+  </a>
+
+  {/* Gmail Card */}
+  <a 
+    href="mailto:mi9418357@gmail.com" 
+    target="_blank"
+    className="w-72 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer flex items-center space-x-4 bg-gradient-to-r from-red-400 to-red-600 text-white"
+  >
+    <FaEnvelope className="text-white text-4xl" />
+    <div>
+      <h2 className="text-lg font-bold">Gmail</h2>
+      <p className="font-medium">mi9418357@gmail.com</p>
+    </div>
+  </a>
+
+</div>
+
+
+
+
+
+
 
       {/* Card */}
       <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-4xl mb-6">
         
-        {/* WhatsApp */}
-        <div className="flex items-center space-x-4 border-b pb-4 mb-4">
-          <FaWhatsapp className="text-green-600 text-3xl" />
-          <div>
-            <h2 className="text-lg font-semibold text-gray-700">WhatsApp</h2>
-            <a 
-              href="https://wa.me/+8801791663651" 
-              target="_blank"
-              className="text-blue-600 font-medium hover:underline"
-            >
-              01791-663651
-            </a>
-          </div>
-        </div>
 
-        {/* Gmail */}
-        <div className="flex items-center space-x-4 border-b pb-4 mb-4">
-          <FaEnvelope className="text-red-600 text-3xl" />
-          <div>
-            <h2 className="text-lg font-semibold text-gray-700">Gmail</h2>
-            <a 
-              href="mailto:mi9418357@gmail.com" 
-              target="_blank"
-              className="text-blue-600 font-medium hover:underline"
-            >
-              mi9418357@gmail.com
-            </a>
-          </div>
-        </div>
-
-        {/* Contacts */}
-        <div className="flex items-start space-x-4">
-          <FaPhoneAlt className="text-purple-600 text-3xl mt-1" />
-          <div>
-            <h2 className="text-lg font-semibold text-gray-700">Contact Numbers</h2>
-            <ul className="mt-1 space-y-1 text-blue-600 font-medium">
-              
-              <li>
-                <a href="tel://01791663651" target="_blank" className="hover:underline">
-                  📞 01791-663651   
-                  <br/>
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manik Hossain (Owner)
-                </a>
-              </li>
-              <br />
-              <li>
-                <a href="tel://01313392075" target="_blank" className="hover:underline">
-                  📞 01313-392075
-                  <br/>
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sujon (Computer operator) 
-                </a>
-              </li>
-              <br />
-              <li>
-                <a href="tel://01742734391" target="_blank" className="hover:underline">
-                  📞 01742734391
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mizanur Rahman (Operator 2)  
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+       <Contacts/>
 
       </div>
        {/* ✅ Extra Links */}
@@ -99,13 +77,13 @@ export default function Home() {
           href="/pricing" 
           className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
         >
-          ৳ Pricing
+          ৳ সেবার মূল্য তালিকা দেখুন
         </Link>
         <Link 
           href="/about-us" 
           className="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition"
         >
-          ℹ️ About Us
+          ℹ️ আমাদের সম্পর্কে
         </Link>
       </div>
     </div>
