@@ -21,7 +21,7 @@ export default function Home() {
         />
       </div>
       {/* Heading */}
-      <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center uppercase underline">
+      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center uppercase underline">
         দ্রুত যোগাযোগ করার জন্য-
       </h1>
 
@@ -67,17 +67,25 @@ export default function Home() {
               
               <li>
                 <a href="tel://01791663651" target="_blank" className="hover:underline">
-                  📞 Owner (Manik Hossain) — 01791-663651
+                  📞 01791-663651   
+                  <br/>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manik Hossain (Owner)
                 </a>
               </li>
+              <br />
               <li>
                 <a href="tel://01313392075" target="_blank" className="hover:underline">
-                  📞 Computer operator (Sujon) — 01313-392075
+                  📞 01313-392075
+                  <br/>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sujon (Computer operator) 
                 </a>
               </li>
+              <br />
               <li>
                 <a href="tel://01742734391" target="_blank" className="hover:underline">
-                  📞 Operator 2 (Mizanur Rahman) - 01742734391
+                  📞 01742734391
+                  <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mizanur Rahman (Operator 2)  
                 </a>
               </li>
             </ul>
